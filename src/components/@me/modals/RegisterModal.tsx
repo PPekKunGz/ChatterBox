@@ -33,7 +33,7 @@ const RegisterModal = () => {
         try {
             setIsLoading(true);
 
-            await axios.post('/api/register', {
+            await axios.post(`${process.env.apiUrl}/apis/v1/auth/register`, {
                 email, password, username, name
             })
             toast.success('Account created.')
